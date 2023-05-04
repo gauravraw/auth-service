@@ -4,14 +4,15 @@ server:
     context-path: "/auth-service"
 
 spring:
+  datasource:
+    url: jdbc:sqlserver://userdetails123.database.windows.net:1433;database=user_details;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    username: userdetails@userdetails123
+    password: User_Details@123
   jpa:
     show-sql: false
-    database: MYSQL
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/user_details?useSSL=true&enabledTLSProtocol=TLSv1.2
-    username: root
-    password: root
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.SQLServer2012Dialect
 
 jwt:
   secret: "secret"
@@ -19,3 +20,6 @@ jwt:
 app:
   jwttoken:
     message: "Login Successful !!"
+
+
+
