@@ -1,0 +1,21 @@
+server:
+  port: 10842
+  servlet:
+    context-path: "/auth-service"
+
+spring:
+  jpa:
+    show-sql: false
+    database: MYSQL
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user_details?useSSL=true&enabledTLSProtocol=TLSv1.2
+    username: root
+    password: root
+
+jwt:
+  secret: "secret"
+
+app:
+  jwttoken:
+    message: "Login Successful !!"
